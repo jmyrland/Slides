@@ -1,0 +1,23 @@
+!!! 5
+html.no-js(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title A Collection of Page Transitions
+    link(rel='stylesheet', type='text/css', href='css/default.css')
+    link(rel='stylesheet', type='text/css', href='css/component.css')
+    link(rel='stylesheet', type='text/css', href='css/animations.css')
+    script(src='https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js')
+    script(src='js/modernizr.custom.js')
+    != getBlock('scripts').toHTML()
+
+  body
+
+    #progress.clearfix &nbsp;
+
+    != content
+
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js')
+    script(src='js/main.js')
+ 

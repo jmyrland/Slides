@@ -1,0 +1,18 @@
+---
+page: 5
+layout: "example"
+---
+
+style
+  li:after {
+    content: attr(data-text);
+    color: #FFF;
+  }
+
+
+ul
+  li(data-text='white') black
+  li(data-text='yang') yin
+  li(data-text='thing') some
+  li(data-text='nuts') Pea
+

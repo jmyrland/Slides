@@ -1,0 +1,8 @@
+---
+layout: "default"
+---
+
+#pt-main.pt-perspective
+  for post in getCollection('pages').toJSON()
+    if !post.url.match(/index/)
+      != post.contentRendered
