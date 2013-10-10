@@ -1,0 +1,32 @@
+---
+page: 5
+layout: "html-example"
+---
+script
+  console.log("Inline script is just for show!");
+
+style.
+  /* UGH, inline style! */
+  #ex-1 h3 { 
+    font-size: 2em;
+  }
+  #ex-1 h3:before { 
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    text-decoration: inherit;
+    margin-right: .1em;
+    content: "\f13b";
+  }
+
+#ex-1
+  h3 Perfect for showing examples of:
+
+  ul
+    li HTML
+    li JS
+    li CSS
+
+  p.
+    This code is only written 
+    once, using <strong>JADE</strong>.
