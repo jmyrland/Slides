@@ -2,4 +2,11 @@
 
 A simple docpad solution for generating html slides.
 
+## Getting it up and running
+0. [Install node and npm](http://nodejs.org/)
+1. Install docpad: `npm install -g docpad`
+2. Navigate to the root of the project and run `docpad run` 
+3. Browse your hosted docpad site (probably [http://localhost:9778/](http://localhost:9778/))
+3. Thats it! Now, modify some of the pages in the `project_root/pages/` folder.
+
 Ripped the design and animations from [Codrops](http://tympanus.net/codrops/), specifically [this example](http://tympanus.net/codrops/2013/05/07/a-collection-of-page-transitions/]).

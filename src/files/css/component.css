@@ -55,7 +55,7 @@ html, body { height: 100%; }
 	width: 100%;
 	text-align: center;
 	text-transform: uppercase;
-	word-spacing: -0.3em;
+	/*word-spacing: -0.3em;*/
 }
 .pt-page h1.grandios {
 	font-size: 8em;
