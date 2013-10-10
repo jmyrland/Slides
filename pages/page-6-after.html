@@ -1,0 +1,39 @@
+
+<div class="pt-page pt-page-5 ">
+<div class="code-container">
+  <h2>HTML</h2>
+  <pre class="prettyprint lang-html">
+&lt;style&gt;
+  li:after {
+    content: attr(data-text);
+    color: #FFF;
+  }
+  
+  
+&lt;/style&gt;
+&lt;ul&gt;
+  &lt;li data-text=&quot;white&quot;&gt;black&lt;/li&gt;
+  &lt;li data-text=&quot;yang&quot;&gt;yin&lt;/li&gt;
+  &lt;li data-text=&quot;thing&quot;&gt;some&lt;/li&gt;
+  &lt;li data-text=&quot;nuts&quot;&gt;Pea&lt;/li&gt;
+&lt;/ul&gt;</pre>
+</div>
+<div class="result-container">
+  <h2>Result</h2>
+  <div class="result">
+<style>
+  li:after {
+    content: attr(data-text);
+    color: #FFF;
+  }
+  
+  
+</style>
+<ul>
+  <li data-text="white">black</li>
+  <li data-text="yang">yin</li>
+  <li data-text="thing">some</li>
+  <li data-text="nuts">Pea</li>
+</ul></div>
+</div>
+</div>
