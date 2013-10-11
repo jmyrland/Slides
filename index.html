@@ -10,8 +10,45 @@
     <link rel="stylesheet" type="text/css" href="css/animations.css">
     <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css">
     <script src="https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js"></script>
-    <script src="js/modernizr.custom.js"></script>
-	
+    <script src="js/modernizr.custom.js"></script><script >(function(){
+	/* Did we just livereload? */
+var log = true && localStorage && console && console.log && true;
+if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
+	localStorage.removeItem('/docpad-livereload/reloaded');
+	console.log('LiveReloaded at', new Date())
+}
+
+/* Listen for the regenerated event and perform a reload of the page when the event occurs */
+var listen = function(){
+	var socket = io.connect('/docpad-livereload');
+	socket.on('regenerated',function(){
+		if ( log ) {
+	localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+}
+document.location.reload();
+	});
+};
+	if ( typeof io !== 'undefined' ) {
+		listen();
+	} else {
+		/* Inject socket.io into our page then listen once loaded */
+var inject = function(){
+	var t = document.createElement('script');
+	t.type = 'text/javascript';
+	t.async = true;
+	t.src = '/socket.io/socket.io.js';
+	t.onload = listen;
+	var s = document.getElementsByTagName('script')[0];
+	s.parentNode.insertBefore(t,s);
+};
+		var readyStateCheckInterval = setInterval(function() {
+  if (document.readyState === "complete") {
+    inject();
+    clearInterval(readyStateCheckInterval);
+  }
+}, 10);
+	}
+})();</script>
   </head>
   <body>
     <div id="progress" class="clearfix">&nbsp;</div>
@@ -69,7 +106,13 @@
 </div>
 <div class="result-container">
   <h2>Result</h2>
-  <div class="result">
+  <div class="browser-frame">
+    <div class="browser-header">
+      <div class="browser-control close-browser"></div>
+      <div class="browser-control drop-browser"></div>
+      <div class="browser-control enbiggn-browser"></div>
+    </div>
+    <div class="browser-content result">
 <script>
   console.log("Inline script is just for show!");
   
@@ -100,7 +143,10 @@
     This code is only written 
     once, using <strong>JADE</strong>.
   </p>
-</div></div>
+</div>
+    </div>
+  </div>
+  <!--.result!= content-->
 </div>
 </div>
 <div class="pt-page pt-page-2 ">
