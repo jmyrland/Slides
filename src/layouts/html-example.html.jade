@@ -6,6 +6,16 @@ layout: "page"
   h2 HTML
   pre.prettyprint.lang-html= content
 
+
+
 .result-container
   h2 Result
-  .result!= content
+  .browser-frame
+    .browser-header
+        .browser-control.close-browser
+        .browser-control.drop-browser
+        .browser-control.enbiggn-browser
+      .browser-content.result
+        != content
+
+  //.result!= content

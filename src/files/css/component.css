@@ -109,7 +109,7 @@ html, body { height: 100%; }
 .pt-page .code-container pre,
 .pt-page .result-container .result {
 	color: #333;
-	background: rgba(255,255,255,.25);	
+	background: rgba(255,255,255,.75);	
 	margin: 0;
 	padding: 1em;
 	border-radius: 4px;
@@ -165,6 +165,58 @@ html, body { height: 100%; }
 .no-cssanimations .pt-message {
 	display: block;
 }
+
+.browser-frame {
+	background: #eee;
+	display: block;
+	float: left;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	box-shadow: 0px 5px 15px rgba(0,0,0,0.22);
+	border-radius: 5px;
+	border: 1px solid #9c9c9c; 
+}
+ 
+.browser-header {
+	height: 30px;
+	border-radius: 5px 5px 0px 0px;
+	box-shadow: inset 0px 1px 0px white, inset 0px -1px 0px #9c9c9c;
+	background: -webkit-linear-gradient(#f1f1f1 0%, #dadada 100%); 
+}
+ 
+.browser-content {
+	background: #fff;
+	overflow: hidden;
+	border-radius: 0 0 5px 5px;
+	padding: 0; 
+}
+ 
+.browser-control {
+	width: 9px;
+	height: 9px;
+	background: #444;
+	border-radius: 50px;
+	float: left;
+	margin: 10px 0 0 9px;
+	border: 1px solid #828282;
+	box-shadow: 0px 1px 0px rgba(255,255,255,0.8), inset 0px 1px 0px rgba(255,255,255,0.8) 
+}
+ 
+.browser-control.close-browser {
+	background: #df1f1f;
+	background: -webkit-linear-gradient(#f6bebe 0%, #df1f1f 50%, #f6bebe 100%); 
+}
+
+.browser-control.drop-browser {
+	background: #d6ab35;
+	background: -webkit-linear-gradient(#f5e6bd 0%, #d6ab35 50%, #f5e6bd 100%); 
+}
+
+.browser-control.enbiggn-browser {
+	background: #6cac1d;
+	background: -webkit-linear-gradient(#c1ea90 0%, #6cac1d 50%, #c1ea90 100%); 
+}		
 
 @media screen and (max-width: 47.4375em) {
 	.pt-page h1 {

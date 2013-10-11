@@ -12,4 +12,7 @@ Checkout some example slides [here](http://jmyrland.github.com/slides).
 3. Thats it! Now, modify some of the pages in the `project_root/pages/` folder.
 
 ## Creds
-Ripped the design and animations from [Codrops](http://tympanus.net/codrops/), specifically [this example](http://tympanus.net/codrops/2013/05/07/a-collection-of-page-transitions/]).
+
+Ripped the design and animations from [Codrops](http://tympanus.net/codrops/), specifically [this example](http://tympanus.net/codrops/2013/05/07/a-collection-of-page-transitions/).
+
+[Pure CSS3 Browser Frames](http://glasshills.co.uk/resources/css3browserframe/) provided by [Jack](http://glasshills.co.uk/).
