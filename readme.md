@@ -2,9 +2,10 @@
 
 A simple docpad solution for generating html slides.
 
-Checkout some example slides [here](http://jmyrland.github.com/slides).
+Checkout some example slides [here](http://jmyrland.github.com/Slides).
 
 ## Getting it up and running
+
 0. [Install node and npm](http://nodejs.org/)
 1. Install docpad: `npm install -g docpad`
 2. Navigate to the root of the project and run `docpad run` 
