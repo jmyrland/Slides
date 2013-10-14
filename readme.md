@@ -1,6 +1,6 @@
 # Docpad slides
 
-A simple docpad solution for generating html slides.
+A simple [docpad](http://docpad.org/) solution for generating html slides.
 
 Checkout some example slides [here](http://jmyrland.github.com/Slides).
 
