@@ -37,23 +37,38 @@ var PageTransitions = (function() {
 		$progress.css("width", progress + "%");
 	}
 
-	function previousPage( animation ){
-		current = (current == 0 ? pagesCount : current) - 1;
-		turnThePage(animation, -1);
+	var previousAnimation = 18,
+		nextAnimation = 23;
+
+	function previousPage(){
+		var next = (current == 0 ? pagesCount : current) - 1,
+			$current = $pages.eq( current ),
+			$prev = $pages.eq(next);
+
+		current = next;
+
+		slideFromTo($current, $prev, previousAnimation);
 	}
 
-	function nextPage( animation ) {
-		current = (current + 1) % (pagesCount);
-		turnThePage(animation, 1)
+	function nextPage() {
+		var next = (current + 1) % (pagesCount),
+			$current = $pages.eq( current ),
+			$prev = $pages.eq(next);
+
+		current = next;
+			
+		slideFromTo($current, $prev, nextAnimation);
 	}
 
-	function turnThePage( animation, direction ) {
+	function slideFromTo( $currPage, $nextPage, animation ) {
 
 		isAnimating = true;
 
-		var $currPage = $pages.eq( current - direction),
-			$nextPage = $pages.eq( current ).addClass( 'pt-page-current' ),
-			outClass = '', 
+		$nextPage.addClass( 'pt-page-current' );
+
+		//var $currPage = $pages.eq( current - direction),
+		//	$nextPage = $pages.eq( current ).addClass( 'pt-page-current' ),
+		var	outClass = '', 
 			inClass = '';
 
 		switch( animation ) {
@@ -365,19 +380,39 @@ var PageTransitions = (function() {
 		$inpage.attr( 'class', $inpage.data( 'originalClassList' ) + ' pt-page-current' );
 	}
 
+	// Listen to arrow keys:
 	$(window).keydown(function (e) {
+		
+		if(isAnimating)
+			return;
+
   		var keyCode = e.keyCode || e.which,
     		arrow = {left: 37, up: 38, right: 39, down: 40 };
 
     	switch(keyCode){
     		case arrow.left:
-    			previousPage(18)
+    			previousPage()
     			break;
     		case arrow.right:
-    			nextPage(23)
+    			nextPage()
     			break;
     	}
     });
+
+	// Listen to swipe motions:
+	swipemotion.on("swipe-left", function(){
+		if(!isAnimating){
+			nextPage();
+		}
+	})
+
+	swipemotion.on("swipe-right", function(){
+		if(!isAnimating){
+			previousPage();
+		}
+	})
+
+
 
 	init();
 

@@ -8,9 +8,14 @@ Checkout some example slides [here](http://jmyrland.github.com/Slides).
 
 0. [Install node and npm](http://nodejs.org/)
 1. Install docpad: `npm install -g docpad`
-2. Navigate to the root of the project and run `docpad run` 
+2. Navigate to the root of the project and run `npm install` to install project dependencies. 
+2. In the project folder, start docpad with `docpad run` 
 3. Browse your hosted docpad site (probably [http://localhost:9778/](http://localhost:9778/))
-3. Thats it! Now, modify some of the pages in the `project_root/pages/` folder.
+3. Thats it! Now, modify some of the pages in the `~/src/documents/pages/` folder.
+
+## LeapJS
+
+Now supporting LeapJS swipe gestures. All you have to do is to connect your leap motion, and swipe between pages! 
 
 ## Creds
 
