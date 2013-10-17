@@ -30,11 +30,30 @@ var PageTransitions = (function() {
 		$pages.eq( current ).addClass( 'pt-page-current' );
 
 		updateProgress();
+
+		$(window).load(setPageFromHash);
+		window.onhashchange = setPageFromHash;
+	}
+
+	var setPageFromHash = function(){
+		if(window.location.hash){
+			var page = window.location.hash.split("/").pop();
+			if(!isNaN(page) && page-1 != current){
+				var	$current = $pages.eq( current ),
+					$next = $pages.eq(page-1);
+
+				current = page - 1;
+
+				slideFromTo($current, $next, nextAnimation);
+			}
+		}		
 	}
 
 	function updateProgress(){
 		var progress = (current / (pagesCount-1)) * 100;
 		$progress.css("width", progress + "%");
+
+		if(current != 0) window.location.hash = "!/" + (current+1);
 	}
 
 	var previousAnimation = 18,
@@ -53,11 +72,12 @@ var PageTransitions = (function() {
 	function nextPage() {
 		var next = (current + 1) % (pagesCount),
 			$current = $pages.eq( current ),
-			$prev = $pages.eq(next);
+			$next = $pages.eq(next),
+			animation = parseInt($next.attr("data-animation")) || nextAnimation;
 
 		current = next;
 			
-		slideFromTo($current, $prev, nextAnimation);
+		slideFromTo($current, $next, animation);
 	}
 
 	function slideFromTo( $currPage, $nextPage, animation ) {
@@ -363,6 +383,8 @@ var PageTransitions = (function() {
 		if( !support ) {
 			onEndAnimation( $currPage, $nextPage );
 		}
+		
+		updateProgress();
 
 	}
 
@@ -371,7 +393,6 @@ var PageTransitions = (function() {
 		endNextPage = false;
 		resetPage( $outpage, $inpage );
 		isAnimating = false;
-		updateProgress();
 	}
 
 	function resetPage( $outpage, $inpage ) {
@@ -411,8 +432,6 @@ var PageTransitions = (function() {
 			previousPage();
 		}
 	})
-
-
 
 	init();
 
