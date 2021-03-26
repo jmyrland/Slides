@@ -2,7 +2,12 @@
 
 A simple [docpad](http://docpad.org/) solution for generating html slides.
 
-Checkout some example slides [here](http://jmyrland.github.com/Slides).
+![Example slides](https://i.imgur.com/EONybuy.gif)
+
+Checkout some example slides:
+- [Demo](http://jmyrland.github.com/Slides)
+- [A collection of css selectors](https://myrland.nu/css-selectors/)
+- [jQuery basics](https://myrland.nu/css-selectors/)
 
 ## Getting it up and running
 
